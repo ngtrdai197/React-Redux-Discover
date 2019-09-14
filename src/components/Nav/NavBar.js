@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { connect } from 'react-redux'
 
+let flag = true;
 
-export default function NavBar() {
+function NavBar(props) {
+    console.log(props);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">Navbar</Link >
@@ -16,6 +20,19 @@ export default function NavBar() {
                     <Link className="nav-item nav-link" to="/">Pricing</Link>
                 </div>
             </div>
+            <span>{check()}: {props.shareReducer.count}</span>
         </nav>
     )
 }
+
+function check() {
+    return flag = flag ? 'True' : 'False';
+}
+
+const mapStateToProps = (state) => ({
+    shareReducer: state.shareReducer
+})
+
+export default connect(mapStateToProps, null)(NavBar);
+
+

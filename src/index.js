@@ -11,7 +11,7 @@ import { allReducers } from './@store/reducers'
 // thunk - used allowe one action with object not pure
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// config for redux extension
+// config for redux extension with redux-thunk
 const store = createStore(
     allReducers,
     composeEnhancer(applyMiddleware(thunk))
