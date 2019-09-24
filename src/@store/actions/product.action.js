@@ -4,8 +4,12 @@ import { api } from '../../@api/base.api'
 export const getAllProduct = () => {
     return async (dispatch) => {
         try {
-            const respon = await api.get(`/product?page=1&perPage=12`);
-
+            const respon = await api.get(`/product?page=1&perPage=7`);
+            respon.data.products.map(product => {
+                return product.images = product.images.map(img => {
+                    return img = `http://localhost:5000/${img}`;
+                })
+            })
             dispatch(getAllProductSucess(respon.data))
         } catch (error) {
             dispatch(getAllProductFail(error.response))
@@ -17,6 +21,10 @@ export const getProductById = (productId) => {
     return async (dispatch) => {
         try {
             const respon = await api.get(`/product/${productId}`);
+            const newArrayImages = respon.data.images.map(img => {
+                return img = `http://localhost:5000/${img}`;
+            });
+            respon.data.images = newArrayImages;
             dispatch(getProductSucess(respon.data))
         } catch (error) {
             dispatch(getProductFail(error.response.data))

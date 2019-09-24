@@ -3,7 +3,7 @@ import { GET_ALL_PRODUCT_FAIL, GET_ALL_PRODUCT_SUCCESS, GET_PRODUCT_ID_SUCCESS, 
 let initialProductState = {
     products: [],
     error: {},
-    product: {}
+    product: null
 }
 
 export default (state = initialProductState, action) => {
