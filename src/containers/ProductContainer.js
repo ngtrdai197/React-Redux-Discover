@@ -11,7 +11,7 @@ function ProductContainer(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    if (!props.products) return "Loading..."
+    if (!props.products) return "Product page loading..."
 
     return (
         <div className="container">

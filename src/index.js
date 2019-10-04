@@ -3,19 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose } from 'redux'
-import thunk from 'redux-thunk'
-import { allReducers } from './@store/reducers'
-
-// thunk - used allowe one action with object not pure
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-// config for redux extension with redux-thunk
-const store = createStore(
-    allReducers,
-    composeEnhancer(applyMiddleware(thunk))
-)
+import { Provider } from 'react-redux';
+import { store } from './@store';
 
 ReactDOM.render(
     <Provider store={store}>

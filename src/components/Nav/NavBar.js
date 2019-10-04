@@ -13,6 +13,8 @@ export default function NavBar() {
                     <Link className="nav-item nav-link active" to="/">Home <span className="sr-only">(current)</span></Link>
                     <Link className="nav-item nav-link" to="/product-details/5d5804a75bb3ea27f8958aa5">Product</Link>
                     <Link className="nav-item nav-link" to="/">Pricing</Link>
+                    <Link className="nav-item nav-link" to="/auth/signup">Sign up</Link>
+                    <Link className="nav-item nav-link" to="/auth/login">Login</Link>
                 </div>
             </div>
         </nav>
